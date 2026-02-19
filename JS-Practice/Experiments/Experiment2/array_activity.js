@@ -6,7 +6,7 @@ for(let i = 0; i < arr.length; i++){
     if(num1 < arr[i])
         num1 = arr[i]
 }
-console.log(num1)
+console.log(`Largest number is ${num1}`)
 
 //duplicate in array
 let arr2 = []
@@ -15,6 +15,7 @@ arr.forEach(element =>{
         arr2.push(element);
     }
 })
+console.log(`Fibonacci Series:`)
 console.log(arr2)
 
 //find missing number
@@ -27,6 +28,7 @@ for(let i = 1; i<=9; i++){
 for(let i = 0; i < Array.length; i++){
     sum += Array[i]
 }
-console.log(toatal_sum - sum)
+console.log(`Missing number is ${toatal_sum - sum}`)
+
 
 

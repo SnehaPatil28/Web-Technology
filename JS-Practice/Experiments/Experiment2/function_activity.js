@@ -4,6 +4,7 @@ function even_odd(num){
     else
         console.log("number is odd")
 }
+console.log(`Function for even odd:`)
 even_odd(10)
 
 //sum of array
@@ -15,4 +16,4 @@ function sum_of_array(arr){
     return sum
 }
 let array = [1,2,3,4,5]
-console.log(sum_of_array(array))
+console.log(`Sum of array is ${sum_of_array(array)}`)

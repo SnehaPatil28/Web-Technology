@@ -1,0 +1,135 @@
+<!-- What is an event?
+   Events is an Action that happens in the browsers
+   Ex : Clicking the mouse , Pressing keys, loading a page, Submitting form 
+   
+   Javascript can detect this events and respond to them
+   
+   Types of Events : 
+     1. Mouse Event : Click, DBL click, Mouse hover, Mouse Out
+     2. Keyboard Event : KeyDown, KeyUp
+     3. Browser Event : Load, Resize, Scroll
+
+  AddEventListener is a Javascript Methods used to attach an event handler to HTML elements 
+  to that specifit function run when perticular elements occurs.
+   -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Events Demo</title>
+
+    <style>
+      body {
+        background-color: #414141;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        margin: 15px;
+      }
+
+      img {
+        width: 200px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      img:hover {
+        transform: scale(1.05);
+      }
+
+      a {
+        color: lightblue;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Amazing Images (Click to Remove)</h2>
+
+    <ul id="images">
+      <li>
+        <img
+          id="photoshop"
+          src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+          alt="Photoshop Logo"
+        />
+      </li>
+
+      <li>
+        <img
+          id="japan"
+          src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+          alt="Mount Fuji"
+        />
+
+        <!--  onclick.alert('hi')
+         This is not good way. HTML should contain only structure and Javascript contain logic. this is a bad practice and hard to maintain-->
+      </li>
+
+      <li>
+        <img
+          id="Nature"
+          src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b"
+          alt="Nature Image"
+        />
+      </li>
+
+      <li>
+        <img
+          id="photoman"
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+          alt="Photographer"
+        />
+      </li>
+
+      <li>
+        <img
+          id="tiger"
+          src="https://images.unsplash.com/photo-1546182990-dffeafbe841d"
+          alt="Tiger"
+        />
+      </li>
+
+      <li>
+        <a href="https://google.com" id="google">Visit Google</a>
+      </li>
+    </ul>
+  </body>
+  <script>
+    document.getElementById("japan").onclick = function () {
+      alert("Hi");
+    };
+    // Select element - Assign function to element - Run function
+    document.getElementById("tiger").addEventListener("click", function (e) {
+      alert("Hi");
+      console.log(e);
+    });
+
+    document.getElementById("photoman").addEventListener("click", function () {
+      console.log("Clicking Inside the ul");
+    },true); // Event Propagation : event bubling
+
+    document.getElementById("Nature").addEventListener("click", function () {
+      console.log("Clicking on the Nature");
+    },true); // event capturing
+
+    // Capture Phase: window -> document -> body -> div -> button.
+    //Bubble Phase: button -> div -> body -> document -> window. 
+
+    document.getElementById('google').addEventListener('click', function(e){
+       console.log("Google Clicked")
+       e.preventDefault()
+      })
+  </script>
+</html>
