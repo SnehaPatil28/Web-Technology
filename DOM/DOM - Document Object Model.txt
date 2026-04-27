@@ -1,5 +1,0 @@
-DOM - Document Object Model
-  - Programming interface between HTML and JS
-  - JavaScript alone can not make more changes
-  - JS use DOM to restructure, delete, update the HTML Tags
- 
