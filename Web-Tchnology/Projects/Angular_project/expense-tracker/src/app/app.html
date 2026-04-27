@@ -1,0 +1,7 @@
+<h1>Expense Tracker</h1>
+
+<app-add-expense (expenseAdded)="onExpenseAdded($event)"></app-add-expense>
+
+<app-expense-list [expenses]="expenses"></app-expense-list>
+
+<h3>Total: ₹{{ getTotal() }}</h3>

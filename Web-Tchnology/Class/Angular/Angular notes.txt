@@ -1,0 +1,156 @@
+Q. Difference between angular and react
+
+Angular is typescript based fronted framework , developed by google
+It helps us build a single page application (SPA)
+SPA - where the page does not fully reload when navigation between different views.
+
+Angular Tools  -
+node js, npm (Node package manager), CLI(Command Line Interface)
+
+CLI - Used for create and manage angular apps
+
+IQ :-
+1.How to create angular project
+2.what is npm and ng
+
+ng - is a initials of angular
+
+Steps to create angular project 
+1. check node version
+2. create folder Angular
+3. Open cmd
+4. type command -> npm install -g @angular/cli -> press enter
+5. type command -> ng new project_name -> press enter
+6. after above command it will ask some question 
+   first question press yes
+   for CSS press yes
+   for server-side rendering press no
+   last question press none (enter)
+7. project will be created in angular folder --> open in vs code
+8. in new terminal -> to run code --> ng serve
+9. follow the link the page will be displayed.
+
+
+---------------------------------------08-04-2026------------------------------------------------------
+Angular folder structure - 
+package.json - packages list, includes dependancies
+dependancies - part of project development  
+dev-dependancies - only used for local use
+angular.json- project configuration file
+style.css - global style file
+.gitignore - file and folders to excute from version control
+tfconfig- typescript configuration file
+index.html- main file
+app.congfig.js -- app configuration
+main.ts -- entry point of application
+src/app -- root folder
+
+// components - component is UI block structure 
+[command to create component - ng generate component component_name / ng g c component_name]
+
+--To bind new component steps - 
+   - for home componet--
+   -open home.ts then copy selector project_name
+   -then paste this in app.html inside <> brackets
+
+
+-----Data Binding------
+data binding connets UI to code
+
+types of data binding
+1.one way -
+ 1. interpolation -- show data from ts in html , syntax --{{}}
+ 2. property binding
+ 3. event binding
+
+2.two way -
+ -node modules
+   
+
+---Data Binding ---- 13 April 2026
+Data binding is a binding technique it connects UI to code
+There are two types of data binding 
+1. One way 
+      1. interpolation --  syntax --{{value}}
+      - Show data from ts to html 
+      2. property binding --- Syntax-->  [property] = "value"
+      - Bind html property to ts variable
+      3. event binding --- Syntax --> (click) = 'function()'
+      - call function on event 
+   
+
+2.two way -
+ ngModel - sync data both ways ts to html and html to ts
+      [(ngModel)] = 'Value'
+
+
+Modules 
+- Before angular 15 we need ngModules
+- nowadays we are using angular 20+ version so modules are optional
+- uYou can now use standalone components
+- older angular --> modules
+- new angular --> components are used
+
+Directives
+- Think the directives like the magic wands that can change your web page without rewriting it
+- There are two types of directives structural and attribute directive
+1. Structural directives - change the structure of your page like add, remove or repeated things  --> ngIf, ngFor, ngSwitch
+2. Attribute directives - ng style
+
+
+Routing 
+- navigation between one page to another page is Routing
+- 
+
+Homeactivity 
+1. how we can use if else for loop switch case in angular with examples
+2. 
+
+when using if else, for loop, switch case must import FormsModule
+
+Directives Activity 15/04/2026
+1.div wil be visible when variable is true 
+if the variable is false it should be deleted or hidden
+1. hide /show
+2. toggle
+3. numbers
+4. status active / non active 
+
+
+------Services and dependency injection 15 April 2026
+Service is like a helper class
+It is used to store data or share logic that may components can use
+Instead of writing same code in every components , we write it once in a service.
+
+command to create service file - ng g s service_name
+
+activity -
+1. write 2 examples with services in angular 
+2. learn more about dependency injection
+
+
+------ Routing 20 April 2026---------------------------
+Routing - navigation between one page to new page
+
+1.app.routes.ts - import components and set path
+
+Example - 
+
+export const routes: Routes = [
+    {path : 'home', component : Home},
+    {path : 'Add', component : AddStudent},
+    {path: 'List', component : ListStudent}
+];
+	
+2.app.ts - write imports 
+imports: [RouterOutlet, RouterLink], 
+
+3.app.html
+<ul> 
+<li> 
+<a routerLink="/admin">Admin</a> 
+<a routerLink="/about">Admin</a> 
+</li> 
+</ul> 
+<router-outlet/>
+

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Digital Clock</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Courier New", Courier, monospace;
+        transition: 0.5s;
+      }
+      .light-mode {
+        background-color: #f0f0f0;
+        color: #222;
+      }
+      .dark-mode {
+        background-color: #121212;
+        color: #00ff00;
+      }
+      .container {
+        text-align: center;
+        border: 3px solid;
+        padding: 40px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+      #time {
+        font-size: 5rem;
+        margin: 10px 0;
+      }
+      #date {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 2px solid;
+        background: transparent;
+        color: inherit;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body class="light-mode" id="bg">
+    <div class="container">
+      <h1 id="time">00:00:00</h1>
+      <p id="date">Loading Date...</p>
+      <button id="toggleBtn">Switch to Dark Mode</button>
+    </div>
+
+    <script>
+      const timeDisplay = document.getElementById("time");
+      const dateDisplay = document.getElementById("date");
+      const btn = document.getElementById("toggleBtn");
+      const body = document.getElementById("bg");
+
+      function refreshTime() {
+        const now = new Date();
+
+        let h = now.getHours();
+        let m = now.getMinutes();
+        let s = now.getSeconds();
+
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+
+        timeDisplay.innerText = h + ":" + m + ":" + s;
+
+        dateDisplay.innerText = now.toDateString();
+      }
+
+      setInterval(refreshTime, 1000);
+      refreshTime(); 
+
+      btn.addEventListener("click", function () {
+        if (body.classList.contains("light-mode")) {
+          body.classList.replace("light-mode", "dark-mode");
+          btn.innerText = "Switch to Light Mode";
+        } else {
+          body.classList.replace("dark-mode", "light-mode");
+          btn.innerText = "Switch to Dark Mode";
+        }
+      });
+    </script>
+  </body>
+</html>

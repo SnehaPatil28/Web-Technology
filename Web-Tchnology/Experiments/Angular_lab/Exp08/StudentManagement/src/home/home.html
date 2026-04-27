@@ -1,0 +1,41 @@
+<!-- <p>home works!</p> -->
+ <h2>Data binding</h2>
+<p>Data binding connects your component's state to the template. </p>
+
+<h2>Student details</h2>
+<p>Interpolation: Interpolation prints the current name value as text.</p>
+<p>Name : {{student.name}}</p>
+<p>Age : {{student.age}}</p>
+<p>Course : {{student.course}}</p>
+
+<hr>
+
+<h2>Update Student</h2>
+<p>Two way binding :Two-way data binding, the flow of data is bidirectional i.e. when the data in the model changes, the changes are reflected in the view and when the data in the view changes it is reflected in the model.</p>
+<input type="text" placeholder="Enter Name" [(ngModel)]="newStudent.name">
+<br><br>
+<input type="number" placeholder="Enter Age" [(ngModel)]="newStudent.age">
+<br><br>
+<input type="text" placeholder="Enter course" [(ngModel)]="newStudent.course">
+<br><br>
+
+<button (click)="updateStudent()">Update Student</button>
+
+
+<hr>
+
+<p>Property binding :In property binding, we bind a property of a DOM element to a field which is a defined property in our component TypeScript code.</p>
+    @if(isImage){
+        <img [src]='src'>
+    }@else{
+        <p>Image is not visible.</p>
+    }
+<hr>
+
+<h2>List of courses available</h2>
+<p>Directive : Structural directives (*ngIf, *ngFor) add/remove DOM.Attribute directives ([ngClass], custom [w3X]) change look/behavior without creating/removing nodes.</p>
+<ul>
+    @for(c of courses; track c){
+        <li>{{c}}</li>
+    }
+</ul>
