@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class Home {
   //interpolation
   student = {
-    name :'Siddhi',
+    name :'Sneha',
     age : 20,
     course : 'AIML'
   };

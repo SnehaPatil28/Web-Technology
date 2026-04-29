@@ -1,20 +1,21 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { ExpenseService } from '../../services/expense.service';
 
 @Component({
   selector: 'app-add-expense',
-  standalone: true, 
+  standalone: true,
   templateUrl: './add-expense.html',
 })
 export class AddExpenseComponent {
-  @Output() expenseAdded = new EventEmitter<any>();
+  constructor(private expenseService: ExpenseService) {}
 
   addExpense(titleInput: HTMLInputElement, amountInput: HTMLInputElement) {
-    const expense = {
+    if (!titleInput.value || !amountInput.value) return;
+
+    this.expenseService.addExpense({
       title: titleInput.value,
       amount: +amountInput.value,
-    };
-
-    this.expenseAdded.emit(expense);
+    });
 
     titleInput.value = '';
     amountInput.value = '';

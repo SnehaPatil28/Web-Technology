@@ -1,7 +1,10 @@
 <h1>Expense Tracker</h1>
 
-<app-add-expense (expenseAdded)="onExpenseAdded($event)"></app-add-expense>
+<nav>
+  <a routerLink="/add" routerLinkActive="active">Add Expense</a> |
+  <a routerLink="/list" routerLinkActive="active">Expense List</a>
+</nav>
 
-<app-expense-list [expenses]="expenses"></app-expense-list>
+<p>Total: ₹{{ expenseService.getTotal() }}</p>
 
-<h3>Total: ₹{{ getTotal() }}</h3>
+<router-outlet></router-outlet>
